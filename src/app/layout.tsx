@@ -14,8 +14,16 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "우리 동네 생활 정보",
-  description: "지역 행사, 축제, 지원금 정보를 한눈에!",
+  title: "성남시 생활 정보 | 행사·혜택·지원금 안내",
+  description: "성남시 주민을 위한 지역 행사, 축제, 지원금, 혜택 정보를 매일 업데이트합니다.",
+  openGraph: {
+    title: "성남시 생활 정보 | 행사·혜택·지원금 안내",
+    description: "성남시 주민을 위한 지역 행사, 축제, 지원금, 혜택 정보를 매일 업데이트합니다.",
+    url: "https://my-local-info.pages.dev",
+    siteName: "성남시 생활 정보통",
+    locale: "ko_KR",
+    type: "website",
+  },
 };
 
 export default function RootLayout({
@@ -23,8 +31,48 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'WebSite',
+        name: '성남시 생활 정보',
+        url: 'https://my-local-info.pages.dev',
+        description: '성남시 주민을 위한 지역 행사, 축제, 지원금, 혜택 정보',
+      },
+      {
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: '홈', item: 'https://my-local-info.pages.dev' },
+          { '@type': 'ListItem', position: 2, name: '블로그', item: 'https://my-local-info.pages.dev/blog' },
+        ],
+      },
+    ],
+  };
+
+  const gaId = process.env.NEXT_PUBLIC_GA_ID;
+  const isGaValid = gaId && gaId !== '나중에_입력';
+
   return (
     <html lang="ko">
+      <head>
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+        {isGaValid && (
+          <>
+            <script async src={`https://www.googletagmanager.com/gtag/js?id=${gaId}`} />
+            <script
+              dangerouslySetInnerHTML={{
+                __html: `
+                  window.dataLayer = window.dataLayer || [];
+                  function gtag(){dataLayer.push(arguments);}
+                  gtag('js', new Date());
+                  gtag('config', '${gaId}');
+                `,
+              }}
+            />
+          </>
+        )}
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen flex flex-col`}
       >

@@ -34,8 +34,30 @@ export default function Home() {
     return `${today.getFullYear()}년 ${today.getMonth() + 1}월 ${today.getDate()}일`;
   };
 
+  // 구조화된 데이터 생성 (JSON-LD)
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@graph': [
+      ...events.map(item => ({
+        '@type': 'Event',
+        name: item.name,
+        startDate: item.startDate,
+        endDate: item.endDate !== '상시' ? item.endDate : undefined,
+        location: { '@type': 'Place', name: item.location },
+        description: item.summary
+      })),
+      ...benefits.map(item => ({
+        '@type': 'GovernmentService',
+        name: item.name,
+        description: item.summary,
+        provider: { '@type': 'GovernmentOrganization', name: item.location }
+      }))
+    ]
+  };
+
   return (
     <main className="min-h-screen bg-[#fffdfa] text-gray-800 font-sans">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       {/* 1. 상단 헤더 타이틀 영역 (히어로 섹션) */}
       <section className="bg-orange-50 py-16 px-6 text-center border-b border-orange-100 shadow-sm">
         <h1 className="text-4xl md:text-5xl font-extrabold text-orange-600 mb-4 tracking-tight drop-shadow-sm">

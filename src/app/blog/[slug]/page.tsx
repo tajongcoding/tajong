@@ -2,6 +2,7 @@ import { getPostBySlug, getAllPosts } from '@/lib/posts';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import { notFound } from 'next/navigation';
+import CoupangBanner from '@/components/CoupangBanner';
 import Link from 'next/link';
 
 // 빌드 시 존재하는 모든 slug를 미리 생성 (정적 페이지 생성)
@@ -18,6 +19,14 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   return {
     title: `${post.title} | 성남시 생활 정보통`,
     description: post.summary,
+    openGraph: {
+      title: `${post.title} | 성남시 생활 정보통`,
+      description: post.summary,
+      url: `https://my-local-info.pages.dev/blog/${post.slug}`,
+      type: "article",
+      publishedTime: post.date,
+      authors: ["성남시 생활 정보통 에디터"],
+    },
   };
 }
 
@@ -30,8 +39,40 @@ export default async function BlogDetailPage({ params }: { params: Promise<{ slu
     notFound();
   }
 
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'BlogPosting',
+    headline: post.title,
+    datePublished: post.date,
+    description: post.summary,
+    author: {
+      '@type': 'Organization',
+      name: '성남시 생활 정보통',
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: '성남시 생활 정보통',
+      logo: {
+        '@type': 'ImageObject',
+        url: 'https://my-local-info.pages.dev/favicon.ico',
+      },
+    },
+  };
+
+  const breadcrumbLd = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: '홈', item: 'https://my-local-info.pages.dev' },
+      { '@type': 'ListItem', position: 2, name: '블로그', item: 'https://my-local-info.pages.dev/blog' },
+      { '@type': 'ListItem', position: 3, name: post.title, item: `https://my-local-info.pages.dev/blog/${post.slug}` },
+    ],
+  };
+
   return (
     <main className="max-w-3xl mx-auto px-4 py-10">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }} />
       {/* 뒤로 가기 버튼 */}
       <Link
         href="/blog"
@@ -77,6 +118,9 @@ export default async function BlogDetailPage({ params }: { params: Promise<{ slu
           {post.content}
         </ReactMarkdown>
       </article>
+
+      {/* 쿠팡 파트너스 배너 (본문 하단) */}
+      <CoupangBanner />
 
       {/* 하단 뒤로 가기 */}
       <div className="mt-12 pt-6 border-t border-gray-200">
