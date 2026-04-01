@@ -17,15 +17,15 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const post = getPostBySlug(slug);
   if (!post) return {};
   return {
-    title: `${post.title} | 성남시 생활 정보통`,
+    title: `${post.title} | 울산광역시 생활 정보통`,
     description: post.summary,
     openGraph: {
-      title: `${post.title} | 성남시 생활 정보통`,
+      title: `${post.title} | 울산광역시 생활 정보통`,
       description: post.summary,
       url: `https://my-local-info.pages.dev/blog/${post.slug}`,
       type: "article",
       publishedTime: post.date,
-      authors: ["성남시 생활 정보통 에디터"],
+      authors: ["울산광역시 생활 정보통 에디터"],
     },
   };
 }
@@ -47,11 +47,11 @@ export default async function BlogDetailPage({ params }: { params: Promise<{ slu
     description: post.summary,
     author: {
       '@type': 'Organization',
-      name: '성남시 생활 정보통',
+      name: '울산광역시 생활 정보통',
     },
     publisher: {
       '@type': 'Organization',
-      name: '성남시 생활 정보통',
+      name: '울산광역시 생활 정보통',
       logo: {
         '@type': 'ImageObject',
         url: 'https://my-local-info.pages.dev/favicon.ico',

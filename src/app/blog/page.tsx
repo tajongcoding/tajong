@@ -2,8 +2,8 @@ import Link from 'next/link';
 import { getAllPosts } from '@/lib/posts';
 
 export const metadata = {
-  title: '우리동네 블로그 | 성남시 생활 정보통',
-  description: '성남시 생활 정보와 유용한 이야기를 담은 블로그입니다.',
+  title: '우리동네 블로그 | 울산광역시 생활 정보통',
+  description: '울산광역시 생활 정보와 유용한 이야기를 담은 블로그입니다.',
 };
 
 export default function BlogPage() {
@@ -12,7 +12,7 @@ export default function BlogPage() {
   return (
     <main className="max-w-3xl mx-auto px-4 py-10">
       <h1 className="text-3xl font-bold text-blue-700 mb-2">우리동네 블로그</h1>
-      <p className="text-gray-500 mb-8">성남시 생활 정보와 유용한 이야기를 전해드립니다.</p>
+      <p className="text-gray-500 mb-8">울산광역시 생활 정보와 유용한 이야기를 전해드립니다.</p>
 
       {posts.length === 0 ? (
         <div className="text-center py-20 text-gray-400">

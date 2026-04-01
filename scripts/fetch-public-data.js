@@ -38,7 +38,7 @@ async function main() {
     return fields.some(field => typeof field === 'string' && field.includes(keyword));
   };
 
-  let filteredItems = items.filter(item => checkKeyword(item, '성남'));
+  let filteredItems = items.filter(item => checkKeyword(item, '울산광역시'));
   
   if (filteredItems.length === 0) {
     filteredItems = items.filter(item => checkKeyword(item, '경기'));

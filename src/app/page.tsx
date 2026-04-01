@@ -26,7 +26,8 @@ export default function Home() {
   const fileContents = fs.readFileSync(dataPath, 'utf8');
   const data: LocalData = JSON.parse(fileContents);
 
-  const { events, benefits } = data;
+  const events = data.events || [];
+  const benefits = data.benefits || [];
 
   // 현재 날짜 구하기 (업데이트 날짜 표시용)
   const getLocalDate = () => {
@@ -60,8 +61,8 @@ export default function Home() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       {/* 1. 상단 헤더 타이틀 영역 (히어로 섹션) */}
       <section className="bg-orange-50 py-16 px-6 text-center border-b border-orange-100 shadow-sm">
-        <h1 className="text-4xl md:text-5xl font-extrabold text-orange-600 mb-4 tracking-tight drop-shadow-sm">
-          📍 성남시 생활 정보
+        <h1 className="text-4xl md:text-6xl font-extrabold mb-6 leading-tight drop-shadow-md">
+          📍 울산광역시 생활 정보
         </h1>
         <p className="text-lg md:text-xl text-gray-600 break-keep">
           우리 동네의 알찬 행사와 놓치기 쉬운 혜택을 한눈에 확인하세요!
@@ -71,14 +72,14 @@ export default function Home() {
       <div className="max-w-5xl mx-auto px-6 py-12 flex flex-col gap-16">
 
         {/* 2. 이번 달 행사/축제 카드 목록 */}
-        <section>
+        <section id="events" className="scroll-mt-24">
           <div className="flex items-center gap-3 mb-8">
             <span className="text-3xl">🎉</span>
             <h2 className="text-2xl md:text-3xl font-bold text-gray-800">이번 달 행사 · 축제</h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {events.map((item) => (
-              <Link href="/blog" key={item.id} className="bg-white border border-orange-100 p-6 rounded-2xl shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex flex-col h-full group">
+              <Link href={`/items/${item.id}`} key={item.id} className="bg-white border border-orange-100 p-6 rounded-2xl shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex flex-col h-full group">
                 <div className="text-xs font-bold text-orange-600 bg-orange-100 rounded-full px-3 py-1 w-max mb-4">
                   {item.category}
                 </div>
@@ -111,7 +112,7 @@ export default function Home() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {benefits.map((item) => (
-              <Link href="/blog" key={item.id} className="bg-white border border-green-100 p-6 rounded-2xl shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex flex-col h-full group flex-1">
+              <Link href={`/items/${item.id}`} key={item.id} className="bg-white border border-green-100 p-6 rounded-2xl shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex flex-col h-full group flex-1">
                 <div className="text-xs font-bold text-green-700 bg-green-100 rounded-full px-3 py-1 w-max mb-4">
                   {item.category}
                 </div>

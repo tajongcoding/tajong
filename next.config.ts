@@ -5,7 +5,7 @@ const nextConfig: NextConfig = {
   images: {
     unoptimized: true, // 이미지 최적화 기능 끄기 (Cloudflare 배포 시 필요)
   },
-  trailingSlash: false, // 주소 끝에 빗금(/) 붙이기 규칙 (output export 및 metadata route 호환성 충돌 방지 위해 false 전환)
+  trailingSlash: true, // 주소 끝에 빗금(/) 붙이기 규칙 (Cloudflare 정적 호스팅 폴더 기반 서빙 최적화를 위해 원복)
 };
 
 export default nextConfig;

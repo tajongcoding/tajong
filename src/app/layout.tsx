@@ -14,13 +14,13 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "성남시 생활 정보 | 행사·혜택·지원금 안내",
-  description: "성남시 주민을 위한 지역 행사, 축제, 지원금, 혜택 정보를 매일 업데이트합니다.",
+  title: "울산광역시 생활 정보 | 행사·혜택·지원금 안내",
+  description: "울산광역시 주민을 위한 지역 행사, 축제, 지원금, 혜택 정보를 매일 업데이트합니다.",
   openGraph: {
-    title: "성남시 생활 정보 | 행사·혜택·지원금 안내",
-    description: "성남시 주민을 위한 지역 행사, 축제, 지원금, 혜택 정보를 매일 업데이트합니다.",
+    title: "울산시 생활 정보 | 행사·혜택·지원금 안내",
+    description: "울산시 주민을 위한 지역 행사, 축제, 지원금, 혜택 정보를 매일 업데이트합니다.",
     url: "https://my-local-info.pages.dev",
-    siteName: "성남시 생활 정보통",
+    siteName: "울산시 생활 정보통",
     locale: "ko_KR",
     type: "website",
   },
@@ -36,9 +36,9 @@ export default function RootLayout({
     '@graph': [
       {
         '@type': 'WebSite',
-        name: '성남시 생활 정보',
+        name: '울산광역시 생활 정보',
         url: 'https://my-local-info.pages.dev',
-        description: '성남시 주민을 위한 지역 행사, 축제, 지원금, 혜택 정보',
+        description: '울산광역시 주민을 위한 지역 행사, 축제, 지원금, 혜택 정보',
       },
       {
         '@type': 'BreadcrumbList',
