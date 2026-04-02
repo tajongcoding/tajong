@@ -125,6 +125,9 @@ export default function Home() {
             </Link>
           </div>
         </section>
+
+        {/* 쿠팡 파트너스 배너 추가 */}
+        <CoupangBanner />
       </div>
 
       {/* 앱 추천 섹션 추가 */}
