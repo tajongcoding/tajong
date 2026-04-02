@@ -6,7 +6,7 @@ import { useState } from 'react';
 export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-  // 요청하신 우측 메인 6개 메뉴 + 홈
+  // 우측 메인 메뉴 + 궁금해요 게시판 추가
   const menuItems = [
     { name: '홈', path: '/' },
     { name: '울산 아시나요', path: '/blog' },
@@ -15,6 +15,7 @@ export default function Header() {
     { name: '울산 생활 정보', path: '/blog' },
     { name: '울산 행사·축제', path: '/blog' },
     { name: '울산 명소·관광', path: '/blog' },
+    { name: '궁금해요?', path: '/qna' },
   ];
 
   return (

@@ -4,14 +4,14 @@ import { getAllPosts } from '../lib/posts';
 export default function Home() {
   const latestPosts = getAllPosts().slice(0, 6); // 최신 글 6개 가져오기
 
-  // 6개의 바로가기 링크 (메뉴와 동일 구성)
+  // 6개의 바로가기 링크
   const shortcutCards = [
-    { title: '울산 아시나요', icon: '❓', link: '/blog' },
     { title: '복지 정보', icon: '💝', link: '/blog' },
     { title: '경제 정보', icon: '📈', link: '/blog' },
     { title: '행사·축제', icon: '🎉', link: '/blog' },
     { title: '생활 정보', icon: '🏘️', link: '/blog' },
     { title: '명소·관광', icon: '📸', link: '/blog' },
+    { title: '궁금해요?', icon: '🤔', link: '/qna' },
   ];
 
   // 현재 날짜 구하기
