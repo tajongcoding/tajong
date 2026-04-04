@@ -43,20 +43,26 @@ export function getAllPosts(): PostMeta[] {
   const posts = fileNames
     .filter((fileName) => fileName.endsWith('.md')) // .md 파일만 처리
     .map((fileName) => {
-      const slug = fileName.replace(/\.md$/, ''); // 파일 이름에서 확장자 제거
-      const fullPath = path.join(postsDirectory, fileName);
-      const fileContents = fs.readFileSync(fullPath, 'utf8');
-      const { data } = matter(fileContents); // frontmatter 파싱
+      try {
+        const slug = fileName.replace(/\.md$/, ''); // 파일 이름에서 확장자 제거
+        const fullPath = path.join(postsDirectory, fileName);
+        const fileContents = fs.readFileSync(fullPath, 'utf8');
+        const { data } = matter(fileContents); // frontmatter 파싱
 
-      return {
-        slug,
-        title: data.title || '제목 없음',
-        date: formatDate(data.date),
-        summary: data.summary || '',
-        category: data.category || '기타',
-        tags: Array.isArray(data.tags) ? data.tags : [],
-      };
-    });
+        return {
+          slug,
+          title: String(data.title || '제목 없음'),
+          date: formatDate(data.date),
+          summary: String(data.summary || ''),
+          category: String(data.category || '기타'),
+          tags: Array.isArray(data.tags) ? data.tags.map(String) : [],
+        };
+      } catch (e) {
+        console.error(`에러난 파일: ${fileName}`, e);
+        return null; // 오류 발생 시 이 글만 제외
+       }
+    })
+    .filter((post): post is PostMeta => post !== null); // 정상적으로 읽은 글만 필터링
 
   // 날짜 내림차순 정렬 (최신 글이 먼저)
   posts.sort((a, b) => (a.date < b.date ? 1 : -1));

@@ -57,9 +57,9 @@ export default function RootLayout({
   const isGaValid = gaId && gaId !== '나중에_입력';
 
   return (
-    <html lang="ko">
+    <html lang="ko" suppressHydrationWarning>
       <head>
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+        {/* 에러 방지를 위해 메타 데이터 스크립트 일시 제거 */}
         {isAdSenseValid && (
           <script async src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${adSenseId}`} crossOrigin="anonymous" />
         )}
@@ -81,6 +81,7 @@ export default function RootLayout({
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen flex flex-col`}
+        suppressHydrationWarning
       >
         <Header />
         <div className="flex-1 bg-[#f8f9fa]">

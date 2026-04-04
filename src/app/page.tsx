@@ -8,11 +8,11 @@ export default function Home() {
 
   // 6개의 바로가기 링크
   const shortcutCards = [
-    { title: '복지 정보', icon: '💝', link: '/blog' },
-    { title: '경제 정보', icon: '📈', link: '/blog' },
-    { title: '행사·축제', icon: '🎉', link: '/blog' },
-    { title: '생활 정보', icon: '🏘️', link: '/blog' },
-    { title: '명소·관광', icon: '📸', link: '/blog' },
+    { title: '복지 정보', icon: '💝', link: '/blog?category=복지' },
+    { title: '경제 정보', icon: '📈', link: '/blog?category=경제' },
+    { title: '생활 정보', icon: '🏘️', link: '/blog?category=생활' },
+    { title: '행사·축제', icon: '🎉', link: '/blog?category=행사' },
+    { title: '명소·관광', icon: '📸', link: '/blog?category=명소' },
     { title: '궁금해요?', icon: '🤔', link: '/qna' },
   ];
 
@@ -98,10 +98,6 @@ export default function Home() {
                         src={`/images/${thumbImg}`} 
                         alt={post.title}
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                        onError={(e) => {
-                          // 이미지가 없을 때를 대비한 투명 처리 (에러 방지)
-                          (e.target as HTMLImageElement).style.opacity = '0';
-                        }}
                       />
                       <div className="absolute top-4 left-4">
                         <span className="text-[11px] font-bold text-white bg-[#0F1A2B]/80 backdrop-blur-sm px-2 py-1 rounded">
