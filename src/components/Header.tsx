@@ -17,28 +17,29 @@ export default function Header() {
   }, []);
 
   const menuItems = [
-    { name: '홈', path: '/' },
-    { name: '복지 정보', path: '/blog' },
-    { name: '경제 정보', path: '/blog' },
+    { name: '아시나요', path: '/' },
+    { name: '복지 정보', path: '/blog?category=복지' },
+    { name: '경제 정보', path: '/blog?category=경제' },
     { 
       name: '생활 정보', 
-      path: '#',
+      path: '/blog?category=생활',
       subMenu: [
-        { name: '울산페이(지역화폐)', path: 'https://play.google.com/store/apps/details?id=com.konai.parkland.ulsan' },
-        { name: '울산 버스정보', path: 'https://play.google.com/store/apps/details?id=com.unibus.ulsan' },
-        { name: '울산 관광 가이드', path: 'https://play.google.com/store/apps/details?id=com.ulsankr.tour' },
-        { name: '모바일 울산', path: 'https://play.google.com/store/apps/details?id=kr.go.ulsan.mobile' },
-        { name: '똑똑 울산', path: 'https://play.google.com/store/apps/details?id=kr.go.ulsan.ddp' },
-        { name: '착한배달 울산', path: 'https://play.google.com/store/apps/details?id=com.good.delivery.ulsan' },
+        { name: '📁 생활 정보 전체보기', path: '/blog?category=생활' },
+        { name: '💳 울산페이(지역화폐)', path: 'https://play.google.com/store/apps/details?id=com.konai.parkland.ulsan' },
+        { name: '🚌 울산 버스정보', path: 'https://play.google.com/store/apps/details?id=com.unibus.ulsan' },
+        { name: '🏰 울산 관광 가이드', path: 'https://play.google.com/store/apps/details?id=com.ulsankr.tour' },
+        { name: '🏙️ 모바일 울산', path: 'https://play.google.com/store/apps/details?id=kr.go.ulsan.mobile' },
+        { name: '🔔 똑똑 울산', path: 'https://play.google.com/store/apps/details?id=kr.go.ulsan.ddp' },
+        { name: '🍱 착한배달 울산', path: 'https://play.google.com/store/apps/details?id=com.good.delivery.ulsan' },
       ]
     },
-    { name: '행사·축제', path: '/blog' },
-    { name: '명소·관광', path: '/blog' },
+    { name: '행사·축제', path: '/blog?category=행사' },
+    { name: '명소·관광', path: '/blog?category=명소' },
     { name: '궁금해요?', path: '/qna' },
   ];
 
   return (
-    <header className={`bg-[#0F1A2B] text-white h-[72px] sticky top-0 z-50 flex items-center transition-all duration-300 ${scrolled ? 'shadow-[0_4px_20px_rgba(0,0,0,0.3)] border-b border-slate-700' : 'border-b border-slate-800/50'}`}>
+    <header className={`bg-[#0F1A2B] text-white h-[60px] sticky top-0 z-50 flex items-center transition-all duration-300 ${scrolled ? 'shadow-[0_4px_15px_rgba(0,0,0,0.3)] border-b border-slate-700' : 'border-b border-slate-800/50'}`}>
       <div className="max-w-6xl mx-auto w-full px-6 flex justify-between items-center h-full">
         {/* Logo - 포털 스타일 로고 디자인 */}
         <Link href="/" className="flex items-center group flex-shrink-0">
@@ -121,7 +122,7 @@ export default function Header() {
           {menuItems.map((item, idx) => (
             <div key={idx} className="flex flex-col">
               <div className="py-4 text-[20px] font-bold text-white border-b border-slate-800/50 flex justify-between items-center group active:text-[#C9A857]">
-                <Link href={item.path} onClick={() => !item.subMenu && setIsMobileMenuOpen(false)}>
+                <Link href={item.path} onClick={() => setIsMobileMenuOpen(false)}>
                   {item.name}
                 </Link>
                 {item.subMenu && <span className="text-[12px] text-[#C9A857]">추천 앱 포함</span>}

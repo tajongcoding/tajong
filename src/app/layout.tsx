@@ -83,6 +83,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen flex flex-col`}
         suppressHydrationWarning
       >
+        {/* 서버 동기화 강제 유도: 2026-04-04 09:48 최종 수정됨 */}
         <Header />
         <div className="flex-1 bg-[#f8f9fa]">
           {children}
