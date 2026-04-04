@@ -18,8 +18,8 @@ export default function Header() {
 
   const menuItems = [
     { name: '홈', path: '/' },
-    { name: '복지 정보', path: '/blog' },
-    { name: '경제 정보', path: '/blog' },
+    { name: '복지 정보', path: '/blog?category=복지' },
+    { name: '경제 정보', path: '/blog?category=경제' },
     { 
       name: '생활 정보', 
       path: '#',
@@ -32,8 +32,8 @@ export default function Header() {
         { name: '착한배달 울산', path: 'https://play.google.com/store/apps/details?id=com.good.delivery.ulsan' },
       ]
     },
-    { name: '행사·축제', path: '/blog' },
-    { name: '명소·관광', path: '/blog' },
+    { name: '행사·축제', path: '/blog?category=행사' },
+    { name: '명소·관광', path: '/blog?category=명소' },
     { name: '궁금해요?', path: '/qna' },
   ];
 
