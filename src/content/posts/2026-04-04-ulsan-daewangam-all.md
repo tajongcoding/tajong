@@ -11,7 +11,7 @@ tags:
   - 사진맛집
 ---
 
-<img src="https://images.unsplash.com/photo-1518384401463-d3876163cca?w=800&q=80" alt="대왕암 출렁다리" style="width:100%; height:auto; aspect-ratio:16/9; object-fit:cover; border-radius:12px; margin: 20px 0;" />
+<img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&q=80&w=800" alt="대왕암 출렁다리" style="width:100%; height:auto; aspect-ratio:16/9; object-fit:cover; border-radius:12px; margin: 20px 0;" />
 
 > ### 📝 한눈에 보는 핵심 요약
 > - ✅ **위치**: 울산광역시 동구 등대로 95
@@ -28,7 +28,7 @@ tags:
 
 
 
-<img src="/images/ulsan_sightseeing_main.png" alt="대왕암 전경" style="width:100%; height:auto; aspect-ratio:16/9; object-fit:cover; border-radius:12px; margin: 20px 0;" />
+<img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&q=80&w=800" alt="대왕암 전경" style="width:100%; height:auto; aspect-ratio:16/9; object-fit:cover; border-radius:12px; margin: 20px 0;" />
 
 
 ## 💡 대왕암 제대로 즐기는 법

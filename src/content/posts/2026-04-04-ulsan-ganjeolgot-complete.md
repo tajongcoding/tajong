@@ -11,7 +11,7 @@ tags:
   - 주말여행
 ---
 
-<img src="/images/ulsan_sightseeing_main.png" alt="간절곶 풍경" style="width:100%; height:auto; aspect-ratio:16/9; object-fit:cover; border-radius:12px; margin: 20px 0;" />
+<img src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&q=80&w=800" alt="간절곶 풍경" style="width:100%; height:auto; aspect-ratio:16/9; object-fit:cover; border-radius:12px; margin: 20px 0;" />
 
 > ### 📝 한눈에 보는 핵심 요약
 > - ✅ **위치**: 울산광역시 울주군 서생면 간절곶1길 39-2

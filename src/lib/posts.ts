@@ -15,6 +15,7 @@ export type PostMeta = {
   tags: string[];     // 태그 목록
   contentExcerpt?: string; // 본문 미리보기 (5줄 정도 용도)
   summaryBox?: string; // 핵심 요약 박스 내용 추출
+  thumbnailUrl?: string | null; // 본문 첫 이미지 URL
 };
 
 export type Post = PostMeta & {
@@ -71,6 +72,10 @@ export function getAllPosts(): PostMeta[] {
             .trim();
         const contentExcerpt = rawText.slice(0, 200) + '...';
 
+        // 3. 본문 내의 첫 번째 이미지 추출
+        const imgMatch = content.match(/<img[^>]+src=["']([^"']+)["']/i) || content.match(/!\[.*?\]\((.*?)\)/);
+        const thumbnailUrl = imgMatch ? imgMatch[1] : null;
+
         return {
           slug,
           title: String(data.title || '제목 없음'),
@@ -80,6 +85,7 @@ export function getAllPosts(): PostMeta[] {
           tags: Array.isArray(data.tags) ? data.tags.map(String) : [],
           contentExcerpt,
           summaryBox,
+          thumbnailUrl,
         };
       } catch (e) {
         console.error(`에러난 파일: ${fileName}`, e);

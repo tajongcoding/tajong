@@ -77,21 +77,28 @@ export default async function BlogDetailPage({ params }: { params: Promise<{ slu
       
       {/* 본문 읽기 영역 (너무 넓어지면 가독성이 떨어지므로 가운데 4xl로 제한) */}
       <div className="max-w-4xl mx-auto">
-        {/* 뒤로 가기 버튼 */}
-        <Link
-          href="/blog"
-          className="inline-flex items-center gap-1 text-[15px] font-bold text-slate-500 hover:text-[#0F1A2B] transition-colors mb-8"
-        >
-          ← 목록으로 돌아가기
-        </Link>
+
 
         {/* 글 헤더 영역 */}
         <header className="mb-10">
+          {/* 상단 네비게이션 - 목록 가기 버튼과 카테고리 태그를 나란히 맨 왼쪽에 배치 */}
+          <div className="flex flex-wrap items-center gap-3 mb-6">
+            <Link
+              href="/blog"
+              className="inline-flex items-center gap-1.5 text-[14px] md:text-[15px] font-bold text-blue-700 bg-blue-50 border border-blue-200 px-4 py-1.5 rounded-full hover:bg-blue-100 hover:border-blue-300 transition-all shadow-sm"
+            >
+              ← 목록으로 돌아가기
+            </Link>
 
-          {/* 카테고리 뱃지 */}
-          <span className="inline-flex items-center text-[13px] font-bold text-blue-700 bg-blue-50 border border-blue-200 px-3 py-1 rounded-full mb-4">
-            {post.category}
-          </span>
+            {/* 카테고리 뱃지 - 목록 가기와 나란히 배치 */}
+            <span className="inline-flex items-center text-[15px] md:text-[16px] font-bold text-blue-700 bg-blue-50 border border-blue-200 px-4 py-1.5 rounded-full">
+              {post.category === '복지' ? '복지 정보' : 
+               post.category === '경제' ? '경제 정보' : 
+               post.category === '생활' ? '생활 정보' : 
+               post.category === '행사' ? '행사·축제' : 
+               post.category === '명소' ? '명소·관광' : post.category}
+            </span>
+          </div>
 
           {/* 제목 */}
           <h1 className="text-[26px] md:text-[32px] font-black text-[#0F1A2B] mb-4 leading-snug break-keep">{post.title}</h1>
@@ -108,10 +115,10 @@ export default async function BlogDetailPage({ params }: { params: Promise<{ slu
             ))}
           </div>
 
-          {/* 요약 박스 */}
+          {/* 요약 박스 (서제목 역할을 하므로 본문과 동일한 18px 크기 적용) */}
           {post.summary && (
-            <div className="bg-slate-50 border-l-4 border-[#0F1A2B] rounded-r-xl px-6 py-4 shadow-sm hover:border-[#C9A857] transition-colors">
-              <p className="text-[15px] font-medium text-[#374151] leading-relaxed break-keep m-0">
+            <div className="bg-slate-50 border-l-4 border-[#0F1A2B] rounded-r-xl px-6 py-4 shadow-sm hover:border-[#C9A857] transition-colors mb-4">
+              <p className="text-[18px] font-medium text-[#374151] leading-relaxed break-keep m-0">
                 {post.summary}
               </p>
             </div>

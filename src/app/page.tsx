@@ -88,7 +88,7 @@ export default function Home() {
                   복지: [
                     'https://images.unsplash.com/photo-1593113598332-cd288d649433?auto=format&fit=crop&q=80&w=800',
                     'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&q=80&w=800',
-                    'https://images.unsplash.com/photo-1516627145497-ae6968895b40?auto=format&fit=crop&q=80&w=800',
+                    'https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=800',
                   ],
                   경제: [
                     'https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?auto=format&fit=crop&q=80&w=800',
@@ -121,9 +121,9 @@ export default function Home() {
                     className="bg-white rounded-[12px] border-[3px] border-[#0F1A2B] shadow-sm hover:shadow-lg hover:border-[#C9A857] hover:-translate-y-1 transition-all duration-300 flex flex-col overflow-hidden group h-full"
                   >
                     {/* 이미지 창 280px 유지 */}
-                    <div className="relative w-full h-[280px] bg-slate-100 overflow-hidden border-b-[3px] border-[#0F1A2B]">
+                    <div className="relative w-full h-[230px] md:h-[260px] bg-slate-100 overflow-hidden border-b-[3px] border-[#0F1A2B] shrink-0">
                       <img 
-                        src={thumbImg} 
+                        src={post.thumbnailUrl || thumbImg} 
                         alt={post.title}
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                       />
@@ -138,20 +138,21 @@ export default function Home() {
                       </div>
                     </div>
 
-                    <div className="p-3 md:p-4 flex flex-col h-full bg-white">
+                    <div className="p-3 md:p-4 flex flex-col flex-1 bg-white">
                       {/* 상단 정보 영역 */}
                       <div className="flex flex-col flex-1">
+
                         {/* Date */}
                         <div className="mb-1.5 flex justify-between items-center text-[12px] text-slate-500 font-bold bg-slate-100 px-2.5 py-0.5 rounded-full w-fit">
                           📅 {post.date}
                         </div>
 
-                        <h3 className="text-[20px] md:text-[22px] font-black text-[#1F2937] mb-1.5 group-hover:text-[#C9A857] transition-colors line-clamp-2 leading-snug break-keep">
+                        <h3 className="text-[20px] md:text-[22px] font-black text-[#1F2937] mb-1.5 group-hover:text-[#C9A857] transition-colors line-clamp-2 leading-snug break-keep shrink-0">
                           {post.title}
                         </h3>
                         
-                        {/* 핵심 요약 상자 */}
-                        <div className="bg-[#F5F7FA] border border-slate-200 rounded-xl p-3.5 text-slate-700 font-[600] text-[15px] md:text-[16px] leading-[1.6] break-keep whitespace-pre-line shadow-inner">
+                        {/* 핵심 요약 상자 - flex-1을 추가하여 빈 공간을 이것이 채우게 함 */}
+                        <div className="bg-[#F5F7FA] border border-slate-200 rounded-xl p-3.5 text-slate-700 font-[600] text-[15px] md:text-[16px] leading-[1.6] break-keep whitespace-pre-line shadow-inner flex flex-col flex-1">
                           {post.summaryBox?.includes('📝') ? (
                             <>
                                <div className="text-[#0F1A2B] font-black mb-1.5 border-b border-slate-200 pb-1 text-[17px] md:text-[19px]">{post.summaryBox.split('\n')[0]}</div>
@@ -164,7 +165,7 @@ export default function Home() {
                       </div>
 
                       {/* Bottom read more - 항상 맨 아래 고정 */}
-                      <div className="pt-2.5 mt-2 border-t border-slate-100 flex items-center text-[#0F1A2B] font-extrabold text-[16px] md:text-[18px] group-hover:text-[#C9A857] transition-colors shrink-0">
+                      <div className="pt-2.5 mt-3 border-t border-slate-100 flex items-center text-[#0F1A2B] font-extrabold text-[16px] md:text-[18px] group-hover:text-[#C9A857] transition-colors shrink-0">
                         자세히 보기 <span className="ml-1 text-[#C9A857] tracking-tighter">→</span>
                       </div>
                     </div>

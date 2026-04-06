@@ -1,6 +1,14 @@
 import type { Metadata } from "next";
+import { Noto_Sans_KR } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
+
+const notoSansKr = Noto_Sans_KR({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "900"],
+  display: "swap",
+  variable: "--font-noto-sans-kr",
+});
 
 export const metadata: Metadata = {
   title: "울산광역시 생활 정보 | 행사·혜택·지원금 안내",
@@ -46,7 +54,7 @@ export default function RootLayout({
   const isGaValid = gaId && gaId !== '나중에_입력';
 
   return (
-    <html lang="ko" suppressHydrationWarning>
+    <html lang="ko" className={`${notoSansKr.variable}`} suppressHydrationWarning>
       <head>
         {/* 에러 방지를 위해 메타 데이터 스크립트 일시 제거 */}
         {isAdSenseValid && (
@@ -69,7 +77,7 @@ export default function RootLayout({
         )}
       </head>
       <body
-        className="antialiased min-h-screen flex flex-col"
+        className={`antialiased min-h-screen flex flex-col font-sans`}
         suppressHydrationWarning
       >
         {/* 서버 동기화 강제 유도: 2026-04-04 09:48 최종 수정됨 */}

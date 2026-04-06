@@ -10,7 +10,7 @@ tags:
   - 취업장려금
 ---
 
-<img src="/images/ulsan_economy_main.png" alt="울산 경제 지원" style="width:100%; height:auto; aspect-ratio:16/9; object-fit:cover; border-radius:12px; margin: 20px 0;" />
+<img src="https://images.unsplash.com/photo-1554224154-22dec7ec8818?auto=format&fit=crop&q=80&w=800" alt="울산 경제 지원" style="width:100%; height:auto; aspect-ratio:16/9; object-fit:cover; border-radius:12px; margin: 20px 0;" />
 
 > ### 📝 한눈에 보는 핵심 요약
 > - ✅ **지원 대상**: 울산시 소재 중소·중견기업 신규 취업자

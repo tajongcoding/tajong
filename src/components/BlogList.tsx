@@ -13,6 +13,7 @@ interface PostMeta {
   summary: string;
   category: string;
   tags: string[];
+  thumbnailUrl?: string | null;
 }
 
 // 실제 리스트를 보여주는 내부 컴포넌트
@@ -59,7 +60,7 @@ function BlogListContent({ allPosts }: { allPosts: PostMeta[] }) {
             복지: [
               'https://images.unsplash.com/photo-1593113598332-cd288d649433?auto=format&fit=crop&q=80&w=800',
               'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&q=80&w=800',
-              'https://images.unsplash.com/photo-1516627145497-ae6968895b40?auto=format&fit=crop&q=80&w=800',
+              'https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=800',
             ],
             경제: [
               'https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?auto=format&fit=crop&q=80&w=800',
@@ -94,7 +95,7 @@ function BlogListContent({ allPosts }: { allPosts: PostMeta[] }) {
               {/* 이미지 전체를 채우는 배경 디자인 */}
               <div className="absolute inset-0 z-0">
                 <img 
-                  src={thumbImg} 
+                  src={post.thumbnailUrl || thumbImg} 
                   alt={post.title}
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 opacity-80 group-hover:opacity-100"
                 />

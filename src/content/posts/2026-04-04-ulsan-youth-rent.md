@@ -10,7 +10,7 @@ tags:
   - 무주택
 ---
 
-<img src="/images/ulsan_welfare_main.png" alt="울산 복지 안내" style="width:100%; height:auto; aspect-ratio:16/9; object-fit:cover; border-radius:12px; margin: 20px 0;" />
+<img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=800" alt="울산 복지 안내" style="width:100%; height:auto; aspect-ratio:16/9; object-fit:cover; border-radius:12px; margin: 20px 0;" />
 
 > ### 📝 한눈에 보는 핵심 요약
 > - ✅ **지원 대상**: 울산 거주 만 19~34세 무주택 청년
@@ -20,7 +20,7 @@ tags:
 
 ---
 
-<img src="/images/youth_house_interior.png" alt="청년 자취방" style="width:100%; height:auto; aspect-ratio:16/9; object-cover; border-radius:12px; margin: 20px 0;" />
+<img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=800" alt="청년 자취방" style="width:100%; height:auto; aspect-ratio:16/9; object-cover; border-radius:12px; margin: 20px 0;" />
 
 ## 📌 개요
 울산광역시에서 혼자 힘들게 자취하며 꿈을 키워나가는 청년들을 위해 주거비를 지원합니다. 높은 월세 부담을 덜고 저축이나 자기계발에 더 집중할 수 있는 기회입니다.
@@ -29,7 +29,7 @@ tags:
 
 
 
-<img src="/images/youth_finance_check.png" alt="금융 지원 확인" style="width:100%; height:auto; aspect-ratio:16/9; object-cover; border-radius:12px; margin: 20px 0;" />
+<img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=800" alt="금융 지원 확인" style="width:100%; height:auto; aspect-ratio:16/9; object-cover; border-radius:12px; margin: 20px 0;" />
 
 ## 💡 주요 내용
 - **지원 금액**: 매달 최대 20만원씩, 총 24회까지 지원받을 수 있습니다.

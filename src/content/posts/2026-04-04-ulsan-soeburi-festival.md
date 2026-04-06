@@ -11,7 +11,7 @@ tags:
   - 전통문화
 ---
 
-<img src="/images/ulsan_festival_main.png" alt="울산 쇠부리축제" style="width:100%; height:auto; aspect-ratio:16/9; object-fit:cover; border-radius:12px; margin: 20px 0;" />
+<img src="https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?auto=format&fit=crop&q=80&w=800" alt="울산 쇠부리축제" style="width:100%; height:auto; aspect-ratio:16/9; object-fit:cover; border-radius:12px; margin: 20px 0;" />
 
 > ### 📝 한눈에 보는 핵심 요약
 > - ✅ **일시**: 2026년 5월 중순 (자세한 날짜는 공식 홈페이지 참조)

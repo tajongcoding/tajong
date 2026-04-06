@@ -40,7 +40,7 @@ export default function Header() {
 
   return (
     <header className={`bg-[#0F1A2B] text-white h-[76px] md:h-[84px] sticky top-0 z-50 flex items-center transition-all duration-300 ${scrolled ? 'shadow-[0_4px_15px_rgba(0,0,0,0.3)] border-b border-slate-700' : 'border-b border-slate-800/50'}`}>
-      <div className="max-w-6xl mx-auto w-full px-6 flex justify-between items-center h-full">
+      <div className="max-w-6xl mx-auto w-full px-6 flex justify-start items-center h-full gap-8 md:gap-14 lg:gap-20">
         {/* Logo - 포털 스타일 로고 디자인 */}
         <Link href="/" className="flex items-center group flex-shrink-0 gap-3">
           {/* 로고 이미지 (크기 확대 및 반짝이는 움직임 효과 추가) */}
@@ -48,13 +48,17 @@ export default function Header() {
             <img src="/ulsan_logo.png" alt="울산 로고" className="w-full h-full object-contain relative z-10 group-hover:scale-110 transition-transform duration-300" />
             <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/60 to-transparent"></div>
           </div>
-          <div className="flex flex-col leading-none">
-            <span className="text-[26px] md:text-[30px] font-black tracking-tighter text-white group-hover:text-[#C9A857] transition-colors duration-300 lowercase">
+          <div className="flex flex-col justify-between py-1 h-12 md:h-14">
+            <span className="text-[25px] md:text-[30.5px] font-black tracking-[-0.04em] text-white group-hover:text-[#C9A857] transition-colors duration-300 lowercase leading-none">
               ulsan365<span className="text-[#C9A857]">.</span>com
             </span>
-            <span className="text-[11px] md:text-[13px] font-bold text-[#C9A857] tracking-[0.25em] mt-1 opacity-80 group-hover:opacity-100 transition-opacity">
-              ULSAN PORTAL
-            </span>
+            <div className="w-full flex justify-between items-center px-0.5">
+              {"ULSAN PORTAL INFO".split("").map((char, i) => (
+                <span key={i} className="text-[12px] md:text-[15.5px] font-black text-[#C9A857] leading-none uppercase">
+                  {char === " " ? "\u00A0" : char}
+                </span>
+              ))}
+            </div>
           </div>
         </Link>
         
@@ -96,11 +100,16 @@ export default function Header() {
           ))}
           
           <div className="ml-4 h-6 w-px bg-slate-700/50"></div>
-          <button className="p-2 text-slate-400 hover:text-[#C9A857] transition-colors">
+          <a 
+            href="https://www.google.com/search?q=site:ulsan365.com" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="ml-4 p-2 text-slate-400 hover:text-[#C9A857] border-2 border-slate-700 hover:border-[#C9A857] rounded-lg transition-all duration-300 shadow-sm"
+          >
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
             </svg>
-          </button>
+          </a>
         </nav>
 
         {/* 모바일 햄버거 버튼 */}
