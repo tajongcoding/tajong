@@ -32,7 +32,14 @@ const categoryThemes: Record<string, CategoryTheme> = {
     overlayClass: 'from-rose-950/72 via-slate-900/28 to-transparent',
     surfaceClass: 'from-rose-50 via-white to-amber-50',
     accentClass: 'text-rose-600',
-    images: [ulsanLocalPhotos.taehwagang, ulsanLocalPhotos.uljugun, ulsanLocalPhotos.taehwaru],
+    images: [
+      ulsanLocalPhotos.taehwagang,
+      ulsanLocalPhotos.uljugun,
+      ulsanLocalPhotos.taehwaru,
+      'https://images.unsplash.com/photo-1516307365426-bea591f05011?auto=format&fit=crop&q=80&w=1400',
+      'https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?auto=format&fit=crop&q=80&w=1400',
+      'https://images.unsplash.com/photo-1584515933487-779824d29309?auto=format&fit=crop&q=80&w=1400',
+    ],
   },
   경제: {
     label: '경제 정보',
@@ -42,7 +49,14 @@ const categoryThemes: Record<string, CategoryTheme> = {
     overlayClass: 'from-indigo-950/72 via-slate-900/28 to-transparent',
     surfaceClass: 'from-indigo-50 via-white to-slate-50',
     accentClass: 'text-indigo-600',
-    images: [ulsanLocalPhotos.industry, ulsanLocalPhotos.port, ulsanLocalPhotos.city],
+    images: [
+      ulsanLocalPhotos.industry,
+      ulsanLocalPhotos.port,
+      ulsanLocalPhotos.city,
+      'https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?auto=format&fit=crop&q=80&w=1400',
+      'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1400',
+      'https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=1400',
+    ],
   },
   생활: {
     label: '생활 정보',
@@ -52,7 +66,14 @@ const categoryThemes: Record<string, CategoryTheme> = {
     overlayClass: 'from-sky-950/72 via-slate-900/24 to-transparent',
     surfaceClass: 'from-sky-50 via-white to-cyan-50',
     accentClass: 'text-sky-600',
-    images: [ulsanLocalPhotos.city, ulsanLocalPhotos.taehwaru, ulsanLocalPhotos.taehwagang],
+    images: [
+      ulsanLocalPhotos.city,
+      ulsanLocalPhotos.taehwaru,
+      ulsanLocalPhotos.taehwagang,
+      'https://images.unsplash.com/photo-1516321497487-e288fb19713f?auto=format&fit=crop&q=80&w=1400',
+      'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&q=80&w=1400',
+      'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&q=80&w=1400',
+    ],
   },
   행사: {
     label: '행사·축제',
@@ -62,7 +83,14 @@ const categoryThemes: Record<string, CategoryTheme> = {
     overlayClass: 'from-amber-950/72 via-fuchsia-950/24 to-transparent',
     surfaceClass: 'from-amber-50 via-white to-orange-50',
     accentClass: 'text-amber-600',
-    images: [ulsanLocalPhotos.banner, ulsanLocalPhotos.ganjeolgot, ulsanLocalPhotos.taehwagang],
+    images: [
+      ulsanLocalPhotos.banner,
+      ulsanLocalPhotos.ganjeolgot,
+      ulsanLocalPhotos.taehwagang,
+      'https://images.unsplash.com/photo-1501386761578-eac5c94b800a?auto=format&fit=crop&q=80&w=1400',
+      'https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&q=80&w=1400',
+      'https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?auto=format&fit=crop&q=80&w=1400',
+    ],
   },
   명소: {
     label: '명소·관광',
@@ -72,7 +100,14 @@ const categoryThemes: Record<string, CategoryTheme> = {
     overlayClass: 'from-emerald-950/72 via-teal-900/24 to-transparent',
     surfaceClass: 'from-emerald-50 via-white to-teal-50',
     accentClass: 'text-emerald-600',
-    images: [ulsanLocalPhotos.ganjeolgot, ulsanLocalPhotos.taehwagang, ulsanLocalPhotos.bangudae, ulsanLocalPhotos.uljugun],
+    images: [
+      ulsanLocalPhotos.ganjeolgot,
+      ulsanLocalPhotos.taehwagang,
+      ulsanLocalPhotos.bangudae,
+      ulsanLocalPhotos.uljugun,
+      'https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&q=80&w=1400',
+      'https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&q=80&w=1400',
+    ],
   },
 };
 
@@ -188,7 +223,7 @@ export function getPostVisuals(
 
   const galleryImages = uniqueStrings(
     [...stableImages, post.thumbnailUrl].filter((img): img is string => Boolean(img))
-  ).slice(0, 4);
+  ).slice(0, 6);
 
   return {
     heroImage: stableImages[0] || galleryImages[0] || theme.images[0],

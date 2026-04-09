@@ -68,7 +68,11 @@ export default async function BlogDetailPage({ params }: { params: Promise<{ slu
     .slice(0, 5);
   const visuals = getPostVisuals(post);
   const contentImagesMatches = Array.from(post.content.matchAll(/<img[^>]*src="([^"]+)"/ig));
-  const rawGalleryImages = [visuals.heroImage, ...contentImagesMatches.map(m => m[1])].filter(Boolean);
+  const rawGalleryImages = [
+    visuals.heroImage,
+    ...(visuals.galleryImages || []),
+    ...contentImagesMatches.map((m) => m[1]),
+  ].filter(Boolean);
   const galleryImages = Array.from(new Set(rawGalleryImages)).slice(0, 6);
 
   const jsonLd = {
