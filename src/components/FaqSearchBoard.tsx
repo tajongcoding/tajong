@@ -1,7 +1,8 @@
 "use client";
 
 import Link from 'next/link';
-import { useMemo, useState } from 'react';
+import { useSearchParams } from 'next/navigation';
+import { useEffect, useMemo, useState } from 'react';
 
 type FaqItem = {
   question: string;
@@ -11,13 +12,31 @@ type FaqItem = {
   href: string;
 };
 
+const districtMeta: Record<string, { icon: string; desc: string }> = {
+  전체: { icon: '🗂️', desc: '전체 FAQ 한 번에 보기' },
+  남구: { icon: '🏙️', desc: '청년정책·행사·생활 밀집 정보' },
+  중구: { icon: '🏛️', desc: '행정민원·복지·생활 편의 정보' },
+  동구: { icon: '⚓', desc: '교통·산업생활·실용 정보' },
+  북구: { icon: '🌿', desc: '가정·복지·주거 관련 정보' },
+  울주군: { icon: '⛰️', desc: '관광·나들이·생활 행정 정보' },
+};
+
 export default function FaqSearchBoard({ items }: { items: readonly FaqItem[] }) {
+  const searchParams = useSearchParams();
   const [query, setQuery] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('전체');
   const [selectedDistrict, setSelectedDistrict] = useState('전체');
 
   const categories = useMemo(() => ['전체', ...Array.from(new Set(items.map((item) => item.category)))], [items]);
   const districts = useMemo(() => ['전체', ...Array.from(new Set(items.map((item) => item.district)))], [items]);
+
+  useEffect(() => {
+    const nextCategory = searchParams.get('category') || '전체';
+    const nextDistrict = searchParams.get('district') || '전체';
+
+    setSelectedCategory(categories.includes(nextCategory) ? nextCategory : '전체');
+    setSelectedDistrict(districts.includes(nextDistrict) ? nextDistrict : '전체');
+  }, [searchParams, categories, districts]);
 
   const filteredItems = useMemo(() => {
     const normalized = query.trim().toLowerCase();
@@ -33,7 +52,7 @@ export default function FaqSearchBoard({ items }: { items: readonly FaqItem[] })
     });
   }, [items, query, selectedCategory, selectedDistrict]);
 
-  const popularKeywords = ['청년월세', '대형폐기물', '야간약국', '울산페이', '행사 일정'];
+  const popularKeywords = ['청년월세', '대형폐기물', '야간약국', '남구', '울주군'];
 
   return (
     <section className="bg-white rounded-[24px] shadow-sm border-[2px] border-slate-200 overflow-hidden">
@@ -73,7 +92,7 @@ export default function FaqSearchBoard({ items }: { items: readonly FaqItem[] })
             </div>
           </div>
 
-          <div className="space-y-3">
+          <div className="space-y-4">
             <div className="flex flex-wrap items-center gap-2">
               <span className="text-[13px] font-bold text-slate-500">카테고리:</span>
               {categories.map((category) => {
@@ -95,25 +114,37 @@ export default function FaqSearchBoard({ items }: { items: readonly FaqItem[] })
               })}
             </div>
 
-            <div className="flex flex-wrap items-center gap-2">
-              <span className="text-[13px] font-bold text-slate-500">지역:</span>
-              {districts.map((district) => {
-                const isActive = selectedDistrict === district;
-                return (
-                  <button
-                    key={district}
-                    type="button"
-                    onClick={() => setSelectedDistrict(district)}
-                    className={`rounded-full px-4 py-2 text-[14px] font-bold transition-all border ${
-                      isActive
-                        ? 'bg-[#C9A857] text-[#0F1A2B] border-[#C9A857]'
-                        : 'bg-white text-[#0F1A2B] border-slate-300 hover:border-[#C9A857] hover:text-[#C9A857]'
-                    }`}
-                  >
-                    {district}
-                  </button>
-                );
-              })}
+            <div>
+              <p className="mb-2 text-[13px] font-bold text-slate-500">지역 탭:</p>
+              <div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-6 gap-3">
+                {districts.map((district) => {
+                  const isActive = selectedDistrict === district;
+                  const count = district === '전체' ? items.length : items.filter((item) => item.district === district).length;
+                  const meta = districtMeta[district] || districtMeta['전체'];
+
+                  return (
+                    <button
+                      key={district}
+                      type="button"
+                      onClick={() => setSelectedDistrict(district)}
+                      className={`rounded-[18px] border p-3 text-left transition-all ${
+                        isActive
+                          ? 'border-[#C9A857] bg-[#FFF9EC] shadow-sm'
+                          : 'border-slate-200 bg-white hover:border-[#C9A857] hover:-translate-y-0.5'
+                      }`}
+                    >
+                      <div className="mb-2 flex items-center justify-between gap-2">
+                        <span className="text-[20px]">{meta.icon}</span>
+                        <span className={`rounded-full px-2 py-0.5 text-[11px] font-black ${isActive ? 'bg-[#0F1A2B] text-white' : 'bg-slate-100 text-slate-600'}`}>
+                          {count}건
+                        </span>
+                      </div>
+                      <div className="text-[15px] font-black text-[#0F1A2B]">{district}</div>
+                      <p className="mt-1 text-[12px] text-slate-500 break-keep leading-relaxed">{meta.desc}</p>
+                    </button>
+                  );
+                })}
+              </div>
             </div>
           </div>
 
@@ -130,6 +161,14 @@ export default function FaqSearchBoard({ items }: { items: readonly FaqItem[] })
               </button>
             ))}
           </div>
+
+          {selectedDistrict !== '전체' ? (
+            <div className="rounded-[18px] border border-[#C9A857]/40 bg-[#FFF9EC] px-4 py-3">
+              <p className="text-[13px] font-black tracking-[0.16em] text-[#8A6A1F] uppercase">현재 선택 지역</p>
+              <p className="mt-1 text-[16px] font-black text-[#0F1A2B]">{selectedDistrict} FAQ 모아보기</p>
+              <p className="mt-1 text-[13px] text-slate-600 break-keep">{districtMeta[selectedDistrict]?.desc} 중심으로 질문을 빠르게 볼 수 있습니다.</p>
+            </div>
+          ) : null}
         </div>
       </div>
 
@@ -137,7 +176,7 @@ export default function FaqSearchBoard({ items }: { items: readonly FaqItem[] })
         {filteredItems.length > 0 ? (
           filteredItems.map((item, index) => (
             <details
-              key={`${item.question}-${selectedCategory}-${query}`}
+              key={`${item.question}-${selectedCategory}-${selectedDistrict}-${query}`}
               open={index === 0 && !query}
               className="group rounded-[22px] border-[2px] border-slate-200 bg-white p-5 shadow-sm open:border-[#C9A857]/60 open:shadow-md transition-all"
             >

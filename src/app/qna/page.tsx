@@ -1,3 +1,4 @@
+import { Suspense } from 'react';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import FaqSearchBoard from '@/components/FaqSearchBoard';
@@ -218,7 +219,15 @@ export default function QnaBoard() {
           </div>
         </section>
 
-        <FaqSearchBoard items={faqItems} />
+        <Suspense
+          fallback={
+            <section className="bg-white rounded-[24px] shadow-sm border-[2px] border-slate-200 overflow-hidden">
+              <div className="px-6 md:px-8 py-8 text-center text-slate-500">FAQ를 불러오는 중입니다...</div>
+            </section>
+          }
+        >
+          <FaqSearchBoard items={faqItems} />
+        </Suspense>
 
         <section className="bg-white rounded-[24px] shadow-sm border border-slate-200 p-5 md:p-6">
           <div className="mb-4">
@@ -228,13 +237,18 @@ export default function QnaBoard() {
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-5 gap-3">
             {districtGuideCards.map((district) => (
-              <div key={district.name} className="rounded-2xl border border-slate-200 bg-slate-50/70 p-4">
-                <div className="mb-3 flex h-11 w-11 items-center justify-center rounded-xl bg-white text-[22px] shadow-sm border border-slate-200">
+              <Link
+                key={district.name}
+                href={`/qna?district=${district.name}`}
+                className="group rounded-2xl border border-slate-200 bg-slate-50/70 p-4 hover:border-[#C9A857] hover:bg-white hover:-translate-y-0.5 transition-all"
+              >
+                <div className="mb-3 flex h-11 w-11 items-center justify-center rounded-xl bg-white text-[22px] shadow-sm border border-slate-200 group-hover:border-[#C9A857]/50">
                   {district.icon}
                 </div>
                 <h3 className="text-[16px] font-black text-[#0F1A2B]">{district.name}</h3>
                 <p className="mt-1 text-[13px] text-slate-500 leading-relaxed break-keep">{district.desc}</p>
-              </div>
+                <p className="mt-3 text-[12px] font-black text-[#0F1A2B] group-hover:text-[#C9A857] transition-colors">해당 지역 FAQ 보기 →</p>
+              </Link>
             ))}
           </div>
         </section>
