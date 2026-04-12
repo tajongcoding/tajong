@@ -56,12 +56,12 @@ ABOUT ULSAN 365
               복잡하고 딱딱한 행정 용어는 빼고, 동네 이웃이 친절하게 설명하듯 쉽고 부드럽게 쓰겠습니다.<br />
               누구나 스마트폰 하나로 울산의 좋은 소식들을 가장 먼저, 편안하게 받아보실 수 있도록 최선을 다하겠습니다.
             </p>
-            <div className="mt-8 pt-6 border-t border-slate-200 text-right">
+            <div className="mt-6 text-right space-y-2">
               <p className="text-[16px] text-slate-500 leading-relaxed font-medium">
-                울산을 사랑하는 모든 시민들께 감사드립니다.<br />
+                울산을 사랑하는 모든 시민들께 감사드립 니다.<br />
                 앞으로도 더 나은 정보로 찾아뵙겠습니다.
               </p>
-              <p className="text-[18px] font-bold text-[#0F1A2B] mt-2">— 울산 365 포탈정보 일동직원 드림</p>
+              <p className="text-[18px] font-bold text-[#0F1A2B]">— 울산 365 포탈정보 일동직원 드림.</p>
             </div>
           </div>
         </div>
