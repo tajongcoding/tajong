@@ -23,7 +23,6 @@ export const metadata: Metadata = {
       '울산광역시 시민을 위한 복지 혜택, 청년 지원금, 생활 꿀팁, 야간약국, 행사·관광 정보를 한눈에 확인해 보세요.',
     url: absoluteUrl('/'),
     type: 'website',
-    images: [absoluteUrl('/og-default.svg')],
   },
 };
 
@@ -405,9 +404,9 @@ export default function Home() {
             ulsan365.com
           </p>
           <div className="flex flex-wrap justify-center gap-6 text-[15px] md:text-[16px] font-[600] text-slate-300">
-            <span className="cursor-pointer hover:text-white transition-colors">개인정보처리방침</span>
-            <span className="cursor-pointer hover:text-white transition-colors">홈페이지이용약관</span>
-            <span className="cursor-pointer hover:text-white transition-colors">이메일무단수집거부</span>
+            <Link href="/privacy" className="hover:text-white transition-colors">개인정보처리방침</Link>
+            <Link href="/terms" className="hover:text-white transition-colors">홈페이지이용약관</Link>
+            <Link href="/no-email" className="hover:text-white transition-colors">이메일무단수집거부</Link>
           </div>
           <div className="h-px w-24 bg-slate-800 my-2"></div>
           <p className="text-[15px] md:text-[17px] font-medium text-white leading-relaxed max-w-lg break-keep mx-auto mt-2">

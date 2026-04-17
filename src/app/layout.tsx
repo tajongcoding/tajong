@@ -119,57 +119,6 @@ export default function RootLayout({
                   if (window.location.href !== nextUrl) {
                     window.location.replace(nextUrl);
                   }
-                  return;
-                }
-
-                if (currentHost === canonicalHost) {
-                  var originalPushState = window.history.pushState.bind(window.history);
-                  var originalReplaceState = window.history.replaceState.bind(window.history);
-                  var normalizeVisibleUrl = function (url) {
-                    if (url == null || url === '') {
-                      return '/';
-                    }
-
-                    try {
-                      var parsedUrl = new URL(String(url), window.location.origin);
-                      if (parsedUrl.origin === window.location.origin) {
-                        return '/';
-                      }
-                    } catch (error) {
-                      if (typeof url === 'string' && url.charAt(0) === '/') {
-                        return '/';
-                      }
-                    }
-
-                    return url;
-                  };
-                  var forceRootUrl = function () {
-                    var visibleUrl = window.location.pathname + window.location.search + window.location.hash;
-                    if (visibleUrl !== '/') {
-                      originalReplaceState(window.history.state, '', '/');
-                    }
-                  };
-
-                  if (!window.__ulsan365UrlPinned) {
-                    window.__ulsan365UrlPinned = true;
-                    window.history.pushState = function (state, title, url) {
-                      return originalPushState(state, title, normalizeVisibleUrl(url));
-                    };
-                    window.history.replaceState = function (state, title, url) {
-                      return originalReplaceState(state, title, normalizeVisibleUrl(url));
-                    };
-
-                    window.addEventListener('popstate', function () {
-                      setTimeout(forceRootUrl, 0);
-                    });
-
-                    document.addEventListener('click', function () {
-                      setTimeout(forceRootUrl, 0);
-                      setTimeout(forceRootUrl, 120);
-                    }, true);
-                  }
-
-                  forceRootUrl();
                 }
               })();
             `,
