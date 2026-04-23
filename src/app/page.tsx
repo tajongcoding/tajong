@@ -222,7 +222,32 @@ export default function Home() { const latestPosts = getAllPosts().slice(0, 3);
           label="홈 메인 스폰서 배너"
         />
 
-        {/* 3. 최신 글 (Latest Posts) - 이미지 높이 260px로 축소하여 전체 박스 너비 조절 */}
+        
+<section className="mb-8 bg-white border-[2px] border-[#0F1A2B] rounded-2xl p-5 shadow-sm">
+  <div className="flex items-center justify-between mb-4">
+    <h2 className="text-[22px] md:text-[24px] font-black text-[#0F1A2B]">🔥 오늘 인기글 TOP5</h2>
+    <span className="text-[13px] font-bold text-slate-500">실시간 관심 콘텐츠</span>
+  </div>
+
+  <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+    {featuredVisuals.slice(0,5).map((post, idx) => (
+      <Link
+        key={post.slug}
+        href={`/blog/${post.slug}`}
+        className="flex items-center gap-3 rounded-xl border border-slate-200 px-4 py-3 hover:border-[#C9A857] hover:bg-slate-50 transition-all"
+      >
+        <span className="w-8 h-8 rounded-full bg-[#0F1A2B] text-white text-[14px] font-black flex items-center justify-center">
+          {idx + 1}
+        </span>
+        <span className="font-bold text-[15px] text-[#0F1A2B] line-clamp-1 break-keep">
+          {post.title}
+        </span>
+      </Link>
+    ))}
+  </div>
+</section>
+
+{/* 3. 최신 글 (Latest Posts) - 이미지 높이 260px로 축소하여 전체 박스 너비 조절 */}
         <section>
           <div className="flex justify-between items-end mb-6 border-b-[2px] border-[#0F1A2B] pb-4">
             <h2 className="text-[24px] md:text-[28px] font-bold text-[#0F1A2B] tracking-tight">최신 정보 업데이트</h2>
