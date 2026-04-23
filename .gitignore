@@ -41,3 +41,6 @@ yarn-error.log*
 next-env.d.ts
 auto_prompt.txt
 run_auto.sh
+
+CONVERSATION_LOG_2026-04-09.md
+backups/*.zip
