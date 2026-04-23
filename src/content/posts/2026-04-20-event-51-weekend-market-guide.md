@@ -1,6 +1,6 @@
 ---
 title: "울산 주말 장터와 플리마켓 즐기기"
-pubDate: "2026-04-20"
+pubDate: "2026-04-08"
 category: "행사·축제"
 summary: "울산 주말 장터와 플리마켓 즐기기"
 draft: false

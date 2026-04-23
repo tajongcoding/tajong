@@ -1,6 +1,6 @@
 ---
 title: "울산 먹거리 행사 체크 포인트"
-pubDate: "2026-04-22"
+pubDate: "2026-04-11"
 category: "행사·축제"
 summary: "울산 먹거리 행사 체크 포인트"
 draft: false

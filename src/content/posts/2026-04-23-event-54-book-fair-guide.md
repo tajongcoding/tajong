@@ -1,6 +1,6 @@
 ---
 title: "울산 도서 행사와 북페어 소식 정리"
-pubDate: "2026-04-23"
+pubDate: "2026-04-13"
 category: "행사·축제"
 summary: "울산 도서 행사와 북페어 소식 정리"
 draft: false

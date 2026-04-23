@@ -1,6 +1,6 @@
 ---
 title: "울산 바다 드라이브 코스 추천"
-pubDate: "2026-04-19"
+pubDate: "2026-04-07"
 category: "명소·관광"
 summary: "울산 바다 드라이브 코스 추천"
 draft: false

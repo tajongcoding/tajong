@@ -1,6 +1,6 @@
 ---
 title: "울산 청년 취업 지원 제도 정리"
-pubDate: "2026-04-12"
+pubDate: "2026-03-27"
 category: "경제 정보"
 summary: "울산 청년 취업 지원 제도 정리"
 draft: false

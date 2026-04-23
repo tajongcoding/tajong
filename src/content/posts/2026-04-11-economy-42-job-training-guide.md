@@ -1,6 +1,6 @@
 ---
 title: "울산 직업훈련 프로그램 신청 가이드"
-pubDate: "2026-04-11"
+pubDate: "2026-03-26"
 category: "경제 정보"
 summary: "울산 직업훈련 프로그램 신청 가이드"
 draft: false

@@ -1,6 +1,6 @@
 ---
 title: "울산 봄 축제 일정과 즐기는 법"
-pubDate: "2026-04-21"
+pubDate: "2026-04-10"
 category: "행사·축제"
 summary: "울산 봄 축제 일정과 즐기는 법"
 draft: false

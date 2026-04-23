@@ -1,6 +1,6 @@
 ---
 title: "울산 항구와 산업도시의 성장 이야기"
-pubDate: "2026-04-28"
+pubDate: "2026-04-21"
 category: "울산 아시나요"
 summary: "울산 항구와 산업도시의 성장 이야기"
 draft: false

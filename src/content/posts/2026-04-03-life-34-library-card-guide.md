@@ -1,6 +1,6 @@
 ---
 title: "울산 도서관 회원증 발급과 이용 방법"
-pubDate: "2026-04-03"
+pubDate: "2026-03-14"
 category: "생활 정보"
 summary: "울산 도서관 회원증 발급과 이용 방법"
 draft: false

@@ -1,6 +1,6 @@
 ---
 title: "울산 공영주차장과 주정차 과태료 확인 방법"
-pubDate: "2026-03-31"
+pubDate: "2026-03-09"
 category: "생활 정보"
 summary: "울산 공영주차장과 주정차 과태료 확인 방법"
 draft: false

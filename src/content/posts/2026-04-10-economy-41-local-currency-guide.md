@@ -1,6 +1,6 @@
 ---
 title: "울산 지역 소비 혜택과 지역경제 활용법"
-pubDate: "2026-04-10"
+pubDate: "2026-03-24"
 category: "경제 정보"
 summary: "울산 지역 소비 혜택과 지역경제 활용법"
 draft: false

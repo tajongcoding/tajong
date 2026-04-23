@@ -1,6 +1,6 @@
 ---
 title: "울산 분위기 좋은 카페거리 추천"
-pubDate: "2026-04-17"
+pubDate: "2026-04-04"
 category: "명소·관광"
 summary: "울산 분위기 좋은 카페거리 추천"
 draft: false

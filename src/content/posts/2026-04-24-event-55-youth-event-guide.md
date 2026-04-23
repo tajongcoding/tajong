@@ -1,6 +1,6 @@
 ---
 title: "울산 청년 대상 행사 모아보기"
-pubDate: "2026-04-24"
+pubDate: "2026-04-14"
 category: "행사·축제"
 summary: "울산 청년 대상 행사 모아보기"
 draft: false

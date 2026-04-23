@@ -1,6 +1,6 @@
 ---
 title: "울산 박물관과 전시관 나들이 가이드"
-pubDate: "2026-04-18"
+pubDate: "2026-04-06"
 category: "명소·관광"
 summary: "울산 박물관과 전시관 나들이 가이드"
 draft: false

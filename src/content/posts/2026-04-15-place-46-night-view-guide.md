@@ -1,6 +1,6 @@
 ---
 title: "울산 야경 명소 추천 가이드"
-pubDate: "2026-04-15"
+pubDate: "2026-04-01"
 category: "명소·관광"
 summary: "울산 야경 명소 추천 가이드"
 draft: false

@@ -1,6 +1,6 @@
 ---
 title: "울산 수출기업 지원 사업 정리"
-pubDate: "2026-04-14"
+pubDate: "2026-03-30"
 category: "경제 정보"
 summary: "울산 수출기업 지원 사업 정리"
 draft: false

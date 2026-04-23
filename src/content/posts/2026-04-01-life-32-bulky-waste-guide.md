@@ -1,6 +1,6 @@
 ---
 title: "울산 대형폐기물 인터넷 신고 방법"
-pubDate: "2026-04-01"
+pubDate: "2026-03-11"
 category: "생활 정보"
 summary: "울산 대형폐기물 인터넷 신고 방법"
 draft: false

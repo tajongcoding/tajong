@@ -1,6 +1,6 @@
 ---
 title: "울산 숨은 명소 5곳 추천"
-pubDate: "2026-04-29"
+pubDate: "2026-04-22"
 category: "울산 아시나요"
 summary: "울산 숨은 명소 5곳 추천"
 draft: false

@@ -1,6 +1,6 @@
 ---
 title: "울산 긴급복지 지원 신청 방법"
-pubDate: "2026-04-07"
+pubDate: "2026-03-20"
 category: "복지 정보"
 summary: "울산 긴급복지 지원 신청 방법"
 draft: false

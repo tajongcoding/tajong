@@ -1,6 +1,6 @@
 ---
 title: "울산 다리와 도시 연결 이야기"
-pubDate: "2026-04-27"
+pubDate: "2026-04-19"
 category: "울산 아시나요"
 summary: "울산 다리와 도시 연결 이야기"
 draft: false
