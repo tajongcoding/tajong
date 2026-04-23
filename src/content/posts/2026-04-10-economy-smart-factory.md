@@ -8,12 +8,12 @@ tags:
   - 중소기업지원
   - 제조혁신
 ---
-<img src="https://commons.wikimedia.org/wiki/Special:FilePath/Ulsan_129.30972E_35.52012N.jpg" alt="대표 이미지" style="width:100%; height:auto; aspect-ratio:16/9; object-fit:cover; border-radius:12px; margin: 20px 0;" />
+<img src="/images/posts/economy-smart-factory-01.webp" alt="대표 이미지" style="width:100%; height:auto; aspect-ratio:16/9; object-fit:cover; border-radius:12px; margin: 20px 0;" />
 
 ## 핵심 요약
 울산은 자동차·조선·석유화학 중심의 산업도시인 만큼 제조 경쟁력이 곧 기업의 생존력으로 이어집니다. 최근에는 공정 자동화와 데이터 기반 생산관리 수요가 커지면서 **스마트공장 지원사업**에 대한 관심도 높아지고 있습니다.
 
-<img src="https://commons.wikimedia.org/wiki/Special:FilePath/Shade%20Of%20Taehwagang%20(71978891).jpeg" alt="요약 이미지" style="width:100%; height:auto; aspect-ratio:16/9; object-fit:cover; border-radius:12px; margin: 20px 0;"  />
+<img src="/images/posts/economy-smart-factory-01.webp" alt="요약 이미지" style="width:100%; height:auto; aspect-ratio:16/9; object-fit:cover; border-radius:12px; margin: 20px 0;"  />
 
 ## 이런 분께 해당돼요
 - 생산관리(MES) 시스템 구축
@@ -23,7 +23,7 @@ tags:
 
 단순 장비 구매만이 아니라 **운영 체계 개선**까지 연결되는 계획이 좋은 평가를 받는 편입니다.
 
-<img src="https://commons.wikimedia.org/wiki/Special:FilePath/%EC%9A%B8%EC%A3%BC%EA%B5%B0,_Ulsan,_South_Korea_(Unsplash).jpg" alt="대상 이미지" style="width:100%; height:auto; aspect-ratio:16/9; object-fit:cover; border-radius:12px; margin: 20px 0;"  />
+<img src="/images/posts/economy-smart-factory-01.webp" alt="대상 이미지" style="width:100%; height:auto; aspect-ratio:16/9; object-fit:cover; border-radius:12px; margin: 20px 0;"  />
 
 ## 얼마나, 어떻게 받나요
 1. 현재 공정의 가장 큰 문제 파악하기
@@ -31,7 +31,7 @@ tags:
 3. 공급기업(솔루션 업체) 제안서 비교하기
 4. 도입 후 인력 교육 계획까지 포함하기
 
-<img src="https://commons.wikimedia.org/wiki/Special:FilePath/Ulsan%20taehwaru.jpg" alt="신청 이미지" style="width:100%; height:auto; aspect-ratio:16/9; object-fit:cover; border-radius:12px; margin: 20px 0;" />
+<img src="/images/posts/economy-smart-factory-01.webp" alt="신청 이미지" style="width:100%; height:auto; aspect-ratio:16/9; object-fit:cover; border-radius:12px; margin: 20px 0;" />
 
 ## 신청 방법
 - 중소벤처기업부 또는 관련 수행기관 공고 확인
@@ -41,7 +41,7 @@ tags:
 
 울산테크노파크, 중소기업 지원기관 상담을 함께 이용하면 실무 준비가 더 수월합니다.
 
-<img src="https://commons.wikimedia.org/wiki/Special:FilePath/Port_Terminal_Of_Ulsan.JPG" alt="주의 이미지" style="width:100%; height:auto; aspect-ratio:16/9; object-fit:cover; border-radius:12px; margin: 20px 0;" />
+<img src="/images/posts/economy-smart-factory-01.webp" alt="주의 이미지" style="width:100%; height:auto; aspect-ratio:16/9; object-fit:cover; border-radius:12px; margin: 20px 0;" />
 
 ## 놓치기 쉬운 포인트
 - 생산 리드타임 단축
