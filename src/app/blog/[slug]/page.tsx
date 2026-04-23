@@ -55,6 +55,14 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 }
 
 function replacePostImagesWithMatchedGallery(content: string, images: string[], title: string) {
+  const hasMarkdownImages = /^!\[[^\]]*\]\((.*?)\)\s*$/gm.test(content);
+  const hasHtmlImages = /<img\b[^>]*>/i.test(content);
+
+  // 글 안에 이미지가 이미 있으면 그대로 사용
+  if (hasMarkdownImages || hasHtmlImages) {
+    return content;
+  }
+
   if (!images.length) {
     return content;
   }
@@ -75,10 +83,7 @@ function replacePostImagesWithMatchedGallery(content: string, images: string[], 
     return `<img src="${selected}" alt="${alt}" style="${style}" />`;
   };
 
-  const markdownReplaced = content.replace(/^!\[[^\]]*\]\((.*)\)\s*$/gm, () => nextMarkup());
-  const htmlReplaced = markdownReplaced.replace(/<img\b[^>]*>/gi, () => nextMarkup());
-
-  return htmlReplaced.replace(/\/>\s*\.(?:jpe?g|png|webp|gif)\)/gi, ' />');
+  return images.map(() => nextMarkup()).join('\n');
 }
 
 export default async function BlogDetailPage({ params }: { params: Promise<{ slug: string }> }) {
