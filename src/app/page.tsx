@@ -94,12 +94,12 @@ export default function Home() { const latestPosts = getAllPosts().slice(0, 3);
         <div className="relative z-10 max-w-6xl mx-auto w-full grid lg:grid-cols-[1.1fr_0.9fr] gap-8 items-center">
           <div className="flex flex-col items-start gap-4">
             <div className="inline-block bg-[#1F2937]/50 backdrop-blur-sm border border-[#C9A857]/40 rounded-full px-4 py-1.5 text-[14px] md:text-[17px] font-[700] text-[#C9A857] tracking-wide">
-              울산 생활정보 · 지원금 · 행사 업데이트
+              오늘 울산에서 꼭 알아야 할 정보
             </div>
             <h1 className="text-[32px] md:text-[46px] lg:text-[54px] font-extrabold tracking-tight text-white leading-[1.12] break-keep">
-              울산 생활정보, 지원금, <br className="hidden md:block" />
-              행사 일정까지 <br className="hidden md:block" />
-              <span className="text-[#C9A857]">한눈에 확인하세요</span>
+              오늘 꼭 챙겨야 할 울산 정보, <br className="hidden md:block" />
+              지원금·생활정보·행사 소식까지 <br className="hidden md:block" />
+              <span className="text-[#C9A857]">매일 빠르게 확인하세요</span>
             </h1>
             <p className="text-[16px] md:text-[18px] text-slate-300 font-[400] max-w-xl break-keep mt-1 leading-relaxed">
               청년정책, 복지혜택, 생활 꿀팁, 야간약국, 행사·명소 정보를
