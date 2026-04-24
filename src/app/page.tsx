@@ -35,7 +35,7 @@ export default function Home() { const latestPosts = getAllPosts().slice(0, 3);
     { title: '생활 정보', icon: '🏘️', link: '/blog?category=생활' },
     { title: '행사·축제', icon: '🎉', link: '/blog?category=행사' },
     { title: '명소·관광', icon: '📸', link: '/blog?category=명소' },
-    { title: 'FAQ 안내', icon: '🤔', link: '/qna' },
+    { title: 'FAQ', icon: '🤔', link: '/qna' },
   ];
 
   const featuredVisuals = latestPosts.map((post) => ({ ...post,
