@@ -1,2 +1,113 @@
-import type { PostMeta } from './posts';type CategoryTheme = {  label: string;  toneName: string;  toneDescription: string;  badgeClass: string;  overlayClass: string;  surfaceClass: string;  accentClass: string;  images: string[];};const ulsanLocalPhotos = {  taehwagang: 'https://upload.wikimedia.org/wikipedia/commons/7/76/Shade_Of_Taehwagang_%2871978891%29.jpeg',  taehwaru: 'https://upload.wikimedia.org/wikipedia/commons/d/dd/Ulsan_taehwaru.jpg',  bangudae: 'https://upload.wikimedia.org/wikipedia/commons/2/29/Bangudae_Petroglyphs_from_Ulsan_%285329613206%29.jpg',  port: 'https://upload.wikimedia.org/wikipedia/commons/d/de/Port_Terminal_Of_Ulsan.JPG',  industry: 'https://upload.wikimedia.org/wikipedia/commons/e/eb/Hyundai_Heavy_Industries_Ulsan_Shipyard_from_Jujeon_Beacon_Mound_-_2023-07-24.jpg',  city: 'https://upload.wikimedia.org/wikipedia/commons/3/3a/Ulsan_129.30972E_35.52012N.jpg',  ganjeolgot: 'https://upload.wikimedia.org/wikipedia/commons/1/1f/%EA%B0%84%EC%A0%88%EA%B3%B6%ED%92%8D%EA%B2%BD_-_panoramio.jpg',};const categoryThemes: Record<string, CategoryTheme> = {  복지: {    label: '복지 정보',    toneName: 'Warm Care',    toneDescription: '따뜻한 케어 톤',    badgeClass: 'bg-rose-50/95 text-rose-700 border border-rose-200',    overlayClass: 'from-rose-950/72 via-slate-900/28 to-transparent',    surfaceClass: 'from-rose-50 via-white to-amber-50',    accentClass: 'text-rose-600',    images: [      'https://images.unsplash.com/photo-1516307365426-bea591f05011?auto=format&fit=crop&q=80&w=1400',      'https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?auto=format&fit=crop&q=80&w=1400',      'https://images.unsplash.com/photo-1584515933487-779824d29309?auto=format&fit=crop&q=80&w=1400',      'https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&q=80&w=1400',    ],  },  경제: {    label: '경제 정보',    toneName: 'Industrial Premium',    toneDescription: '산업 성장 톤',    badgeClass: 'bg-indigo-50/95 text-indigo-700 border border-indigo-200',    overlayClass: 'from-indigo-950/72 via-slate-900/28 to-transparent',    surfaceClass: 'from-indigo-50 via-white to-slate-50',    accentClass: 'text-indigo-600',    images: [      ulsanLocalPhotos.industry,      'https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?auto=format&fit=crop&q=80&w=1400',      'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1400',    ],  },  생활: {    label: '생활 정보',    toneName: 'Clean Urban',    toneDescription: '실용적인 도시 톤',    badgeClass: 'bg-sky-50/95 text-sky-700 border border-sky-200',    overlayClass: 'from-sky-950/72 via-slate-900/24 to-transparent',    surfaceClass: 'from-sky-50 via-white to-cyan-50',    accentClass: 'text-sky-600',    images: [      ulsanLocalPhotos.city,      'https://images.unsplash.com/photo-1516321497487-e288fb19713f?auto=format&fit=crop&q=80&w=1400',      'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&q=80&w=1400',    ],  },  행사: {
+import type { PostMeta } from './posts';
+
+type CategoryTheme = {
+  label: string;
+  toneName: string;
+  toneDescription: string;
+  badgeClass: string;
+  overlayClass: string;
+  surfaceClass: string;
+  accentClass: string;
+  images: string[];
+};
+
+const ulsanLocalPhotos = {
+  taehwagang: 'https://upload.wikimedia.org/wikipedia/commons/7/76/Shade_Of_Taehwagang_%2871978891%29.jpeg',
+  taehwaru: 'https://upload.wikimedia.org/wikipedia/commons/d/dd/Ulsan_taehwaru.jpg',
+  bangudae: 'https://upload.wikimedia.org/wikipedia/commons/2/29/Bangudae_Petroglyphs_from_Ulsan_%285329613206%29.jpg',
+  port: 'https://upload.wikimedia.org/wikipedia/commons/d/de/Port_Terminal_Of_Ulsan.JPG',
+  industry: 'https://upload.wikimedia.org/wikipedia/commons/e/eb/Hyundai_Heavy_Industries_Ulsan_Shipyard_from_Jujeon_Beacon_Mound_-_2023-07-24.jpg',
+  city: 'https://upload.wikimedia.org/wikipedia/commons/3/3a/Ulsan_129.30972E_35.52012N.jpg',
+  ganjeolgot: 'https://upload.wikimedia.org/wikipedia/commons/1/1f/%EA%B0%84%EC%A0%88%EA%B3%B6%ED%92%8D%EA%B2%BD_-_panoramio.jpg',
+};
+
+const categoryThemes: Record<string, CategoryTheme> = {
+  복지: {
+    label: '복지 정보',
+    toneName: 'Warm Care',
+    toneDescription: '따뜻한 케어 톤',
+    badgeClass: 'bg-rose-50/95 text-rose-700 border border-rose-200',
+    overlayClass: 'from-rose-950/72 via-slate-900/28 to-transparent',
+    surfaceClass: 'from-rose-50 via-white to-amber-50',
+    accentClass: 'text-rose-600',
+    images: [
+      'https://images.unsplash.com/photo-1516307365426-bea591f05011?auto=format&fit=crop&q=80&w=1400',
+      'https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?auto=format&fit=crop&q=80&w=1400',
+      'https://images.unsplash.com/photo-1584515933487-779824d29309?auto=format&fit=crop&q=80&w=1400',
+      'https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&q=80&w=1400',
+    ],
+  },
+  경제: {
+    label: '경제 정보',
+    toneName: 'Industrial Premium',
+    toneDescription: '산업 성장 톤',
+    badgeClass: 'bg-indigo-50/95 text-indigo-700 border border-indigo-200',
+    overlayClass: 'from-indigo-950/72 via-slate-900/28 to-transparent',
+    surfaceClass: 'from-indigo-50 via-white to-slate-50',
+    accentClass: 'text-indigo-600',
+    images: [
+      ulsanLocalPhotos.industry,
+      'https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?auto=format&fit=crop&q=80&w=1400',
+      'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1400',
+    ],
+  },
+  생활: {
+    label: '생활 정보',
+    toneName: 'Clean Urban',
+    toneDescription: '실용적인 도시 톤',
+    badgeClass: 'bg-sky-50/95 text-sky-700 border border-sky-200',
+    overlayClass: 'from-sky-950/72 via-slate-900/24 to-transparent',
+    surfaceClass: 'from-sky-50 via-white to-cyan-50',
+    accentClass: 'text-sky-600',
+    images: [
+      ulsanLocalPhotos.city,
+      'https://images.unsplash.com/photo-1516321497487-e288fb19713f?auto=format&fit=crop&q=80&w=1400',
+      'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&q=80&w=1400',
+    ],
+  },
+  행사: {
+    label: '지역 행사',
+    toneName: 'Festival Vibrant',
+    toneDescription: '활기찬 축제 톤',
+    badgeClass: 'bg-amber-50/95 text-amber-700 border border-amber-200',
+    overlayClass: 'from-amber-950/72 via-slate-900/24 to-transparent',
+    surfaceClass: 'from-amber-50 via-white to-orange-50',
+    accentClass: 'text-amber-600',
+    images: [
+      ulsanLocalPhotos.taehwagang,
+      ulsanLocalPhotos.ganjeolgot,
+      'https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&q=80&w=1400',
+    ],
+  },
+  기타: {
+    label: '울산 소식',
+    toneName: 'Clean Minimal',
+    toneDescription: '깔끔한 정보 톤',
+    badgeClass: 'bg-slate-50/95 text-slate-700 border border-slate-200',
+    overlayClass: 'from-slate-950/72 via-slate-900/24 to-transparent',
+    surfaceClass: 'from-slate-50 via-white to-blue-50',
+    accentClass: 'text-slate-600',
+    images: [
+      ulsanLocalPhotos.city,
+      'https://images.unsplash.com/photo-1444653363243-1518d63083b7?auto=format&fit=crop&q=80&w=1400',
+    ],
+  },
+};
+
 const LOCAL_IMAGES: Record<string, string[]> = {};
+
+export function getPostVisuals(post: PostMeta) {
+  const category = post.category || '기타';
+  const theme = categoryThemes[category] || categoryThemes['기타'];
+  
+  const localImages = LOCAL_IMAGES[post.slug] || [];
+  const allImages = [...localImages, ...theme.images];
+  
+  const imageIndex = Math.abs(post.slug.split('').reduce((acc, char) => acc + char.charCodeAt(0), 0)) % allImages.length;
+  
+  return {
+    theme,
+    mainImage: allImages[imageIndex],
+    allImages
+  };
+}
