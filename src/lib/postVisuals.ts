@@ -46,68 +46,71 @@ const categoryThemes: Record<string, CategoryTheme> = {
     surfaceClass: 'from-indigo-50 via-white to-slate-50',
     accentClass: 'text-indigo-600',
     images: [
-      ulsanLocalPhotos.industry,
-      'https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?auto=format&fit=crop&q=80&w=1400',
+      'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=1400',
+      'https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&q=80&w=1400',
       'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1400',
+      'https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&q=80&w=1400',
     ],
   },
   생활: {
     label: '생활 정보',
-    toneName: 'Clean Urban',
-    toneDescription: '실용적인 도시 톤',
-    badgeClass: 'bg-sky-50/95 text-sky-700 border border-sky-200',
-    overlayClass: 'from-sky-950/72 via-slate-900/24 to-transparent',
-    surfaceClass: 'from-sky-50 via-white to-cyan-50',
-    accentClass: 'text-sky-600',
+    toneName: 'Daily Fresh',
+    toneDescription: '일상의 신선함 톤',
+    badgeClass: 'bg-emerald-50/95 text-emerald-700 border border-emerald-200',
+    overlayClass: 'from-emerald-950/72 via-slate-900/28 to-transparent',
+    surfaceClass: 'from-emerald-50 via-white to-teal-50',
+    accentClass: 'text-emerald-600',
     images: [
-      ulsanLocalPhotos.city,
-      'https://images.unsplash.com/photo-1516321497487-e288fb19713f?auto=format&fit=crop&q=80&w=1400',
-      'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&q=80&w=1400',
+      'https://images.unsplash.com/photo-1501183315669-44621ee235d2?auto=format&fit=crop&q=80&w=1400',
+      'https://images.unsplash.com/photo-1513151233558-d860c5398176?auto=format&fit=crop&q=80&w=1400',
+      'https://images.unsplash.com/photo-1490730141103-6cac27aaab94?auto=format&fit=crop&q=80&w=1400',
+      'https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&q=80&w=1400',
     ],
   },
-  행사: {
-    label: '지역 행사',
-    toneName: 'Festival Vibrant',
-    toneDescription: '활기찬 축제 톤',
+  교육: {
+    label: '교육 정보',
+    toneName: 'Bright Wisdom',
+    toneDescription: '밝은 지혜 톤',
     badgeClass: 'bg-amber-50/95 text-amber-700 border border-amber-200',
-    overlayClass: 'from-amber-950/72 via-slate-900/24 to-transparent',
+    overlayClass: 'from-amber-950/72 via-slate-900/28 to-transparent',
     surfaceClass: 'from-amber-50 via-white to-orange-50',
     accentClass: 'text-amber-600',
     images: [
-      ulsanLocalPhotos.taehwagang,
-      ulsanLocalPhotos.ganjeolgot,
-      'https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&q=80&w=1400',
+      'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&q=80&w=1400',
+      'https://images.unsplash.com/photo-1497633762265-9d179a990aa6?auto=format&fit=crop&q=80&w=1400',
+      'https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?auto=format&fit=crop&q=80&w=1400',
+      'https://images.unsplash.com/photo-1523050335392-9bf5675f42e8?auto=format&fit=crop&q=80&w=1400',
     ],
   },
   기타: {
-    label: '울산 소식',
+    label: '일반 소식',
     toneName: 'Clean Minimal',
-    toneDescription: '깔끔한 정보 톤',
+    toneDescription: '깔끔한 미니멀 톤',
     badgeClass: 'bg-slate-50/95 text-slate-700 border border-slate-200',
-    overlayClass: 'from-slate-950/72 via-slate-900/24 to-transparent',
-    surfaceClass: 'from-slate-50 via-white to-blue-50',
+    overlayClass: 'from-slate-950/72 via-slate-900/28 to-transparent',
+    surfaceClass: 'from-slate-50 via-white to-slate-100',
     accentClass: 'text-slate-600',
     images: [
+      ulsanLocalPhotos.taehwagang,
       ulsanLocalPhotos.city,
-      'https://images.unsplash.com/photo-1444653363243-1518d63083b7?auto=format&fit=crop&q=80&w=1400',
+      ulsanLocalPhotos.port,
+      ulsanLocalPhotos.ganjeolgot,
     ],
   },
 };
 
-const LOCAL_IMAGES: Record<string, string[]> = {};
+const LOCAL_IMAGES: Record<string, string> = {};
 
 export function getPostVisuals(post: PostMeta) {
   const category = post.category || '기타';
   const theme = categoryThemes[category] || categoryThemes['기타'];
   
-  const localImages = LOCAL_IMAGES[post.slug] || [];
-  const allImages = [...localImages, ...theme.images];
-  
-  const imageIndex = Math.abs(post.slug.split('').reduce((acc, char) => acc + char.charCodeAt(0), 0)) % allImages.length;
-  
+  const seed = post.id.split('').reduce((acc, char) => acc + char.charCodeAt(0), 0);
+  const imageIndex = seed % theme.images.length;
+  const coverImage = LOCAL_IMAGES[post.id] || theme.images[imageIndex];
+
   return {
-    theme,
-    mainImage: allImages[imageIndex],
-    allImages
+    ...theme,
+    coverImage,
   };
 }
