@@ -101,6 +101,10 @@ const categoryThemes: Record<string, CategoryTheme> = {
 
 const LOCAL_IMAGES: Record<string, string> = {};
 
+export function getCategoryLabel(category: string) {
+  return categoryThemes[category]?.label || categoryThemes['기타'].label;
+}
+
 export function getPostVisuals(post: PostMeta) {
   const category = post.category || '기타';
   const theme = categoryThemes[category] || categoryThemes['기타'];
