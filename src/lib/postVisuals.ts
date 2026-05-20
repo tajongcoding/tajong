@@ -435,3 +435,4 @@ export function getPostVisuals(
     accentClass: theme.accentClass,
   };
 }
+
